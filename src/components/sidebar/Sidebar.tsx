@@ -1,15 +1,7 @@
 import logo from "../../assets/Logo.svg";
 
-import * as Icon from "../../assets/sidebar-Icons/index";
 import { useLocation, useNavigate } from "react-router-dom";
-
-const DataLinks = [
-  { id: 1, name: "Overview", path: "/", icon: Icon.Overview },
-  { id: 2, name: "Mentors", path: "/mentors", icon: Icon.Mentors },
-  { id: 3, name: "Message", path: "/message", icon: Icon.Message },
-  { id: 4, name: "Task", path: "/task", icon: Icon.Task },
-  { id: 5, name: "Setting", path: "/setting", icon: Icon.Setting },
-];
+import { DataLinks } from "./Links";
 
 export const Sidebar = () => {
   const location = useLocation();
