@@ -1,11 +1,6 @@
-import { Layout } from "./layout/Layout"
-import { Dashboard } from "./pages/Dashboard"
+import { AppRoutes } from "./routes/Routes"
 
 export const  App = () => {
-  return (
-    <Layout>
-      <Dashboard />
-    </Layout>
-  )
+  return <AppRoutes />
 }
 
