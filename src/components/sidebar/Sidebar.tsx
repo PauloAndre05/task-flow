@@ -8,7 +8,7 @@ export const Sidebar = () => {
   const navigate = useNavigate();
 
   return (
-    <aside className="w-64 bg-white h-screen p-4 flex flex-col border-r border-blue-50">
+    <aside className="w-60 bg-white h-screen p-4 flex flex-col border-r border-blue-50">
       <a href="/" className="mb-8">
         <img src={logo} alt="TaskFlow Logo" />
       </a>
