@@ -1,21 +1,50 @@
-import { ImageProfile } from "../../assets/header/index";
 import { CountTaskIcon, StarIcon } from "../../assets/mentors/index";
 
-export const MentorsCard = () => {
+import type { MentorsType } from "./types/Mentors";
+
+export const MentorsCard = ({
+  id,
+  name,
+  imageProfile,
+  profession,
+  rating,
+  taskQuantity,
+}: MentorsType) => {
+
+  const getMentorInitials = (name: string) => {
+    const words = name.trim().split(/\s+/); 
+    const firstInitial = words[0]?.charAt(0).toUpperCase() || "";
+    const lastInitial =
+      words.length > 1 ? words[words.length - 1].charAt(0).toUpperCase() : "";
+
+    return `${firstInitial}${lastInitial}`;
+  };
+
   return (
-    <div className="w-[20.5rem] bg-white p-6 rounded-xl flex flex-col gap-6">
+    <div
+      className="w-[20.5rem] bg-white p-6 rounded-xl flex flex-col gap-6"
+      key={id}
+    >
       <div className="flex justify-between items-center">
         <div className="flex gap-4 items-center">
           <div className="w-16 h-16 rounded-full overflow-hidden">
-            <img
-              src={ImageProfile}
-              alt="Image-Profile"
-              className="w-full h-full object-cover"
-            />
+            {imageProfile ? (
+              <img
+                src={imageProfile}
+                alt="Mentor Profile"
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <div className="w-full h-full bg-[#141522] flex items-center justify-center rounded-full">
+                <span className="font-semibold text-2xl flex justify-center items-center text-white">
+                  {getMentorInitials(name)}
+                </span>
+              </div>
+            )}
           </div>
           <div className="flex flex-col">
-            <h1 className="font-semibold">Curious George</h1>
-            <p className="text-xs text-[#54577A]">UI UX Design</p>
+            <h1 className="font-semibold">{name}</h1>
+            <p className="text-xs text-[#54577A]">{profession}</p>
           </div>
         </div>
         <span className="text-[#546FFF]">+Follow</span>
@@ -23,12 +52,12 @@ export const MentorsCard = () => {
       <div className="flex justify-between">
         <div className="flex items-center gap-2">
           <img src={CountTaskIcon} alt="Icon" />
-          <span>40Task</span>
+          <span>{taskQuantity}</span>
         </div>
         <div>
           <div className="flex items-center gap-2">
             <img src={StarIcon} alt="Icon" />
-            <span>4,7  (750 Reviews)</span>
+            <span>{rating}</span>
           </div>
         </div>
       </div>
