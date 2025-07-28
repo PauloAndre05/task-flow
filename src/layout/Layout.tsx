@@ -1,15 +1,15 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { Sidebar } from "../components/sidebar/Sidebar";
 import { Header } from "../components/header/Header";
-
 import { TaskToday } from "../components/overview/TaskToday";
+
 
 
 export const Layout = () => {
   const location = useLocation();
 
   return (
-    <div className="flex h-screen ">
+    <div className="flex ">
       <div className="relative w-60">
         <Sidebar />
       </div>
