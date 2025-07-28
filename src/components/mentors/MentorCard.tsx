@@ -22,7 +22,7 @@ export const MentorsCard = ({
 
   return (
     <div
-      className="w-[20.5rem] bg-white p-6 rounded-xl flex flex-col gap-6"
+      className="w-full bg-white p-6 rounded-xl flex flex-col gap-6"
       key={id}
     >
       <div className="flex justify-between items-center">

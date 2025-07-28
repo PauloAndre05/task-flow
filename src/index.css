@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
-body, html{
-    background-color: #FAFAFA;
+body,
+html {
+  background-color: #fafafa;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  width: 100%;
 }
