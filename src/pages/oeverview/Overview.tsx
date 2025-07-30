@@ -11,7 +11,7 @@ export const Overview = () => {
 
   return (
       <div className="h-fill py-4 px-8 flex flex-col gap-8">
-        <div className="flex justify-between gap-10">
+        <div className="flex justify-between gap-10"> 
           <RuuningTask />
           <Activity />
         </div>
