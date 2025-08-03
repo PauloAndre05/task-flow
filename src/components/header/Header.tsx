@@ -18,7 +18,7 @@ export const Header = ({ title, subtitle }: HeaderProps) => {
       <div className="flex justify-between">
         <div className="flex flex-col gap-2 justify-center">
           {title && <h2 className="font-semibold text-2xl">{title}</h2>}
-          {subtitle && <p className="text-gray-400 border">{subtitle}</p>}
+          {subtitle && <p className="text-gray-400">{subtitle}</p>}
         </div>
         <div className="flex gap-5 items-center">
           <img src={Notification} alt="Notification" />
