@@ -1,5 +1,13 @@
+import { useEffect } from "react"
+import { SubHeader } from "../../components/subHeader/subHeader"
+
 export const Task = () => {
+    useEffect(() => {
+        document.title = "Task Flow - Tasks"
+    }, [])
     return(
-        <h1>Task</h1>
+        <div className="flex flex-col gap-4">
+            Task
+        </div>
     )
 }
