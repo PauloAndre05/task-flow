@@ -1,5 +1,8 @@
+import { useEffect } from "react";
+
 export const Message = () => {
-    return(
-        <h1>Message</h1>
-    )
-}
+  useEffect(() => {
+    document.title = "Task Flow - Message";
+  }, []);
+  return <h1>Message</h1>;
+};

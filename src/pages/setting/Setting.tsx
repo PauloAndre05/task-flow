@@ -1,5 +1,8 @@
+import { useEffect } from "react";
+
 export const Setting = () => {
-    return(
-        <h1>Setting</h1>
-    )
-}
+  useEffect(() => {
+    document.title = "Task Flow - Settings";
+  }, []);
+  return <h1>Setting</h1>;
+};
