@@ -3,7 +3,7 @@ import { Category, SortBy } from "../../assets/subHeader/index";
 
 export const SubHeader = () => {
   return (
-    <div className="flex justify-between my-4 items-center">
+    <div className="flex justify-between my-3 items-center">
       <form className="w-2/5">
         <div className="border flex items-center py-3 px-4 rounded-md border-[#F5F5F7]">
           <input
