@@ -30,7 +30,7 @@ export const Layout = () => {
   }, [location.pathname, subtitle]);
 
   return (
-    <div className="flex ">
+    <div className="flex overflow-hidden h-screen">
       <div className="relative w-60 ">
         <Sidebar />
       </div>

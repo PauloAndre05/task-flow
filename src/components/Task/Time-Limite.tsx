@@ -21,7 +21,7 @@ export const TimeLimite = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   return (
-    <div>
+    <div className=" flex flex-col gap-4 overflow-hidden">
       <div className="flex justify-between items-center pr-6">
         <h1 className="text-2xl font-semibold">Time Limit</h1>
         <div className="flex gap-1">
