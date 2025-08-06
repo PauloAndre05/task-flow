@@ -1,0 +1,29 @@
+import { CiSearch } from "react-icons/ci";
+import { Category, SortBy } from "../../assets/subHeader/index";
+
+export const SubHeader = () => {
+  return (
+    <div className="flex justify-between my-3 items-center">
+      <form className="w-2/5">
+        <div className="border flex items-center py-3 px-4 rounded-md border-[#F5F5F7]">
+          <input
+            type="text"
+            placeholder="Search Task"
+            className=" border-hidden outline-hidden w-full"
+          />
+          <CiSearch size={24} className="cursor-pointer text-[#8E92BC]" />
+        </div>
+      </form>
+      <div className="flex items-center gap-6">
+        <div className="flex items-center gap-2 border rounded-md border-[#F5F5F7] py-3 px-4 cursor-pointer">
+          <img src={Category} alt="Category-Icon" />
+          <p>Category</p>
+        </div>
+        <div className="flex items-center gap-2 border rounded-md border-[#F5F5F7] py-3 px-4 cursor-pointer">
+          <img src={SortBy} alt="Sort-By-Icon" />
+          <p>Sort By : Deadline</p>
+        </div>
+      </div>
+    </div>
+  );
+};

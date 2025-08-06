@@ -1,5 +1,8 @@
+import { use, useEffect } from "react";
+
 export const Mentors = () => {
-    return(
-        <h1>Mentors</h1>
-    )
-}
+  useEffect(() => {
+    document.title = "Task Flow - Mentors";
+  }, []);
+  return <h1>Mentors</h1>;
+};
