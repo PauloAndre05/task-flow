@@ -27,7 +27,7 @@ export const Layout = () => {
     setTitle("Settings");
     setSubtitle("")
   }
-  }, [location.pathname, subtitle]);
+  }, [location.pathname]);
 
   return (
     <div className="flex overflow-hidden h-screen">

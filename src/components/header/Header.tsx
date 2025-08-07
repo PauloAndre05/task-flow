@@ -7,12 +7,14 @@ interface HeaderProps {
   title?: string;
   subtitle?: string;
 }
+
 export const Header = ({ title, subtitle }: HeaderProps) => {
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
   return (
     <div
       className={`${
-        location.pathname !== "/" ? "bg-white" : ""
+        !isHomePage ? "bg-white" : ""
       } flex flex-col py-4 px-8 `}
     >
       <div className="flex justify-between">
@@ -25,7 +27,6 @@ export const Header = ({ title, subtitle }: HeaderProps) => {
           <img src={ImageProfile} alt="ImageProfile" />
         </div>
       </div>
-      {location.pathname !== "/" && <SubHeader />}
     </div>
   );
 };

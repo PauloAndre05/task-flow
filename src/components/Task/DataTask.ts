@@ -58,7 +58,7 @@ export const DataTask = [
      {
   id: 10,
   image: ImageTaskToday,
-  title: "Creating Awesome Mobile Apps",
+  title: "Paulo",
   Sector: "UI /UX Designer",  
 },
 ]
