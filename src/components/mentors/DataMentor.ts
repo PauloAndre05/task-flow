@@ -39,4 +39,20 @@ export const DataMentors = [
     taskQuantity: "40 Task",
     rating: "4.7 (750 Reviews)",
   },
+  {
+    id: 6,
+    name: "Curious George",
+    profession: "UI UX Design",
+    imageProfile: ImageProfile,
+    taskQuantity: "40 Task",
+    rating: "4.7 (750 Reviews)",
+  },
+  {
+    id: 7,
+    name: "Curious George",
+    profession: "UI UX Design",
+    imageProfile: ImageProfile,
+    taskQuantity: "40 Task",
+    rating: "4.7 (750 Reviews)",
+  },
 ];

@@ -35,8 +35,8 @@ export const MentorsCard = ({
                 className="w-full h-full object-cover"
               />
             ) : (
-              <div className="w-full h-full bg-[#141522] flex items-center justify-center rounded-full">
-                <span className="font-semibold text-2xl flex justify-center items-center text-white">
+              <div className="w-full h-full bg-[#141522] flex items-center justify-center ">
+                <span className="font-semibold text-2xl text-white">
                   {getMentorInitials(name)}
                 </span>
               </div>
