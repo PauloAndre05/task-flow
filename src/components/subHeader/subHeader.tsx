@@ -41,7 +41,7 @@ export const SubHeader = ({onSearch}: SubHeaderProps) => {
             className=" border-hidden outline-hidden w-full"
             {...register("name")}
           />
-          <CiSearch size={24} className="cursor-pointer text-[#8E92BC]" />
+          <CiSearch size={24} className="cursor-pointer text-[#8E92BC]" onClick={() => handleSearch}/>
         </div>
       </form>
       <div className="flex items-center gap-6">
