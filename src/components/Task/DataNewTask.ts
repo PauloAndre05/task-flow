@@ -1,6 +1,6 @@
 import { ImageTaskToday } from "../../assets/overview";
 
-export const DataTask = [ 
+export const DataNewTask = [ 
      {
   id: 1,
   image: ImageTaskToday,
@@ -58,7 +58,7 @@ export const DataTask = [
      {
   id: 10,
   image: ImageTaskToday,
-  title: "Paulo",
+  title: "Samuel",
   Sector: "UI /UX Designer",  
 },
 ]

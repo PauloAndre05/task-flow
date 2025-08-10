@@ -9,6 +9,7 @@ export const Task = () => {
   }, []);
 
   const [name, setName] = useState<string>("");
+  const [result, setResult] = useState<boolean>(true); 
 
   return (
     <div>
@@ -16,8 +17,14 @@ export const Task = () => {
         <SubHeader onSearch={(value) => setName(value)} />
       </div>
       <div className="flex flex-col gap-4 pl-6 pt-6 pb-6">
-        <TimeLimite name={name} />
-        <NewTask />
+        <TimeLimite name={name} result={result} setResult={setResult} />
+        <NewTask name={name} result={result} setResult={setResult} />
+
+        {!result && (
+          <h1 className="text-2xl font-semibold">
+            Nenhum resultado encontrado
+          </h1>
+        )}
       </div>
     </div>
   );
