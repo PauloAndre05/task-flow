@@ -1,6 +1,6 @@
 import { CiSearch } from "react-icons/ci";
 import { Category, SortBy } from "../../assets/subHeader/index";
-import { useLocation } from "react-router-dom";
+import { data, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import { useForm } from "react-hook-form";
@@ -16,6 +16,7 @@ type SubHeaderProps = {
 export const SubHeader = ({onSearch}: SubHeaderProps) => {
   const [placeholder, setPlaceholder] = useState<string>();
   const location = useLocation();
+  const [name, setName] = useState<string>()
 
   useEffect(() => {
     if (location.pathname === "/task") {
@@ -29,7 +30,10 @@ export const SubHeader = ({onSearch}: SubHeaderProps) => {
   const handleSearch = (data: InputType) => {
     if (onSearch && data.name)
       onSearch(data.name)
+    
   };
+
+  
 
   return (
     <div className="flex justify-between items-center bg-white">

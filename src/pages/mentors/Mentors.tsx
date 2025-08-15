@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { RecentMentors } from "../../components/mentors/Recent-Mentors";
 import { MentorsList } from "../../components/mentors/Mentors-List";
 import { SubHeader } from "../../components/subHeader/subHeader";

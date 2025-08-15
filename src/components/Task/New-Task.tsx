@@ -17,7 +17,7 @@ import "../../index.css";
 
 interface NewTaskProps {
   name: string;
-  result: boolean;
+  result: boolean
   setResult: (value: boolean) => void;
 }
 
@@ -26,14 +26,16 @@ export const NewTask = ({ name, result, setResult }: NewTaskProps) => {
   const nextRef = useRef(null);
 
   const DataTaskFiltered = name
-    ? DataNewTask.filter((task) => 
+    ? DataNewTask.filter((task) =>
         task.title.toLowerCase().includes(name.toLowerCase())
       )
     : DataNewTask;
 
-    useEffect(() => {
-      setResult(DataTaskFiltered.length>0)
-    },[name])
+  useEffect(() => {
+    if (DataTaskFiltered.length > 0) {
+      setResult(true);
+    } else setResult(false);
+  }, [name]);
 
   return (
     <div className=" flex flex-col gap-4 overflow-hidden">
@@ -49,7 +51,7 @@ export const NewTask = ({ name, result, setResult }: NewTaskProps) => {
         </div>
       </div>
       <div className="max-w-full overflow-x-auto">
-        {DataTaskFiltered ? (
+        {result ? (
           <Swiper
             slidesPerView={4}
             spaceBetween={30}
