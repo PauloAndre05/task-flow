@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 
 import "../../index.css";
 
-import { DataMentors } from "../../components/mentors/DataMentor";
+import { DataMentors } from "../mentors/DataMentors";
 import { Navigation } from "swiper/modules";
 import type { NavigationOptions } from "swiper/types";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";

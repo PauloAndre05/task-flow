@@ -11,18 +11,17 @@ export const Task = () => {
   }, []);
 
   const [name, setName] = useState<string>("");
-  const [result, setResult] = useState<boolean>(true);
 
   const filteredNewTasks = DataNewTask.filter((task) =>
-        task.title.toLowerCase().includes(name.toLowerCase())
-      )
+    task.title.toLowerCase().includes(name.toLowerCase())
+  );
   const filteredDataLimite = DataTimeLimite.filter((task) =>
-        task.title.toLowerCase().includes(name.toLowerCase())
-      )
+    task.title.toLowerCase().includes(name.toLowerCase())
+  );
 
-      const hasResulNewTask = filteredNewTasks.length > 0
-      const hasResulDataLimite = filteredDataLimite.length > 0
-    const hasResult = hasResulNewTask || hasResulDataLimite
+  const hasResulNewTask = filteredNewTasks.length > 0;
+  const hasResulDataLimite = filteredDataLimite.length > 0;
+  const hasResult = hasResulNewTask || hasResulDataLimite;
 
   return (
     <div>
