@@ -9,7 +9,7 @@ import "../../index.css";
 import { Navigation } from "swiper/modules";
 import type { NavigationOptions } from "swiper/types";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { Task } from "./Task";
 import { DataNewTask } from "./DataNewTask";
 
@@ -17,11 +17,9 @@ import "../../index.css";
 
 interface NewTaskProps {
   name: string;
-  result: boolean
-  setResult: (value: boolean) => void;
 }
 
-export const NewTask = ({ name, result, setResult }: NewTaskProps) => {
+export const NewTask = ({ name }: NewTaskProps) => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
@@ -30,13 +28,7 @@ export const NewTask = ({ name, result, setResult }: NewTaskProps) => {
         task.title.toLowerCase().includes(name.toLowerCase())
       )
     : DataNewTask;
-
-  useEffect(() => {
-    if (DataTaskFiltered.length > 0) {
-      setResult(true);
-    } else setResult(false);
-  }, [name]);
-
+    
   return (
     <div className=" flex flex-col gap-4 overflow-hidden">
       <div className="flex justify-between items-center pr-6">
@@ -51,7 +43,7 @@ export const NewTask = ({ name, result, setResult }: NewTaskProps) => {
         </div>
       </div>
       <div className="max-w-full overflow-x-auto">
-        {result ? (
+        {DataTaskFiltered ? (
           <Swiper
             slidesPerView={4}
             spaceBetween={30}

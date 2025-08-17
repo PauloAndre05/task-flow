@@ -16,10 +16,14 @@ type TimeLimiteProps = {
 };
 
 export const TimeLimite = ({ name }: TimeLimiteProps) => {
-  const prevRef = useRef(null);4
-  const nextRef = useRef(null)
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
- 
+  const DataTaskFiltered = name
+    ? DataTimeLimite.filter((task) =>
+        task.title.toLowerCase().includes(name.toLowerCase())
+      )
+    : DataTimeLimite;
 
 
   return (
@@ -37,7 +41,7 @@ export const TimeLimite = ({ name }: TimeLimiteProps) => {
       </div>
 
       <div className="max-w-full overflow-x-auto">
-        {DataTimeLimite ? (
+        {DataTaskFiltered ? (
           <Swiper
             slidesPerView={4}
             spaceBetween={30}
@@ -59,7 +63,7 @@ export const TimeLimite = ({ name }: TimeLimiteProps) => {
             }}
             modules={[Navigation]}
           >
-            {DataTimeLimite.map((task) => (
+            {DataTaskFiltered.map((task) => (
               <SwiperSlide key={task.id}>
                 <Task
                   id={task.id}
@@ -76,4 +80,4 @@ export const TimeLimite = ({ name }: TimeLimiteProps) => {
       </div>
     </div>
   );
-};  
+};

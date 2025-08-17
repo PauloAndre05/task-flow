@@ -10,9 +10,8 @@ export const MentorsCard = ({
   rating,
   taskQuantity,
 }: MentorsType) => {
-
   const getMentorInitials = (name: string) => {
-    const words = name.trim().split(/\s+/); 
+    const words = name.trim().split(/\s+/);
     const firstInitial = words[0]?.charAt(0).toUpperCase() || "";
     const lastInitial =
       words.length > 1 ? words[words.length - 1].charAt(0).toUpperCase() : "";
@@ -27,7 +26,7 @@ export const MentorsCard = ({
     >
       <div className="flex justify-between items-center">
         <div className="flex gap-4 items-center">
-          <div className="w-16 h-16 rounded-full overflow-hidden">
+          <div className="w-16 aspect-square rounded-full overflow-hidden flex-shrink-0">
             {imageProfile ? (
               <img
                 src={imageProfile}
@@ -35,7 +34,7 @@ export const MentorsCard = ({
                 className="w-full h-full object-cover"
               />
             ) : (
-              <div className="w-full h-full bg-[#141522] flex items-center justify-center ">
+              <div className="w-full h-full bg-[#141522] rounded-full flex items-center justify-center ">
                 <span className="font-semibold text-2xl text-white">
                   {getMentorInitials(name)}
                 </span>
