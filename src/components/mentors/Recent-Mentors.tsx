@@ -8,15 +8,26 @@ import "swiper/css/pagination";
 
 import "../../index.css";
 
-import { DataMentors } from "../../components/mentors/DataMentor";
+import { DataRecentMentors } from "./DataRecenteMentors";
 import { Navigation } from "swiper/modules";
 import type { NavigationOptions } from "swiper/types";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { useRef } from "react";
 
-export const RecentMentors = () => {
+interface RecenteMentorsProps {
+  name: string
+}
+
+export const RecentMentors = ({name}: RecenteMentorsProps) => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
+  const filteredTecenteMentors = name ? 
+    DataRecentMentors.filter((mentor) => (
+      mentor.name.toLowerCase().includes(name.toLowerCase())
+    ))
+  : DataRecentMentors
+
   return (
     <div className="flex flex-col gap-8">
       <div className="flex justify-between items-center pr-6">
@@ -31,7 +42,7 @@ export const RecentMentors = () => {
         </div>
       </div>
       <div className="max-w-full overflow-x-auto">
-        {DataMentors ? (
+        {filteredTecenteMentors ? (
           <Swiper
             slidesPerView={4}
             spaceBetween={30}
@@ -50,7 +61,7 @@ export const RecentMentors = () => {
             }}
             modules={[Navigation]}
           >
-            {DataMentors.map((mentor) => (
+            {filteredTecenteMentors.map((mentor) => (
               <SwiperSlide key={mentor.id}>
                 <MentorsCard
                   id={mentor.id}
