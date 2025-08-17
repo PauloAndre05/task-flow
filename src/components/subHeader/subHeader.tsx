@@ -16,7 +16,6 @@ type SubHeaderProps = {
 export const SubHeader = ({onSearch}: SubHeaderProps) => {
   const [placeholder, setPlaceholder] = useState<string>();
   const location = useLocation();
-  const [name, setName] = useState<string>()
 
   useEffect(() => {
     if (location.pathname === "/task") {
@@ -28,8 +27,8 @@ export const SubHeader = ({onSearch}: SubHeaderProps) => {
 
   const {register, handleSubmit} = useForm<InputType>();
   const handleSearch = (data: InputType) => {
-    if (onSearch && data.name)
-      onSearch(data.name)
+    if (onSearch)
+      onSearch(data.name ?? "")
     
   };
 
@@ -45,7 +44,7 @@ export const SubHeader = ({onSearch}: SubHeaderProps) => {
             className=" border-hidden outline-hidden w-full"
             {...register("name")}
           />
-          <CiSearch size={24} className="cursor-pointer text-[#8E92BC]" onClick={() => handleSearch}/>
+          <CiSearch size={24} className="cursor-pointer text-[#8E92BC]" onClick={handleSubmit(handleSearch)}/>
         </div>
       </form>
       <div className="flex items-center gap-6">
