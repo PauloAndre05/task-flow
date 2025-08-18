@@ -12,21 +12,24 @@ export const Layout = () => {
 
   useEffect(() => {
     if (location.pathname == "/") {
-    setTitle("Hi, Paulo André");
-    setSubtitle("Let's finish your task today!");
-  } else if (location.pathname == "/task") {
-    setTitle("Explore Task");
-    setSubtitle("");
-  } else if (location.pathname == "/mentors") {
-    setTitle("Explore Mentors"); 
-    setSubtitle("");
-  } else if (location.pathname == "/message") {
-    setTitle("Message")
-    setSubtitle("");
-  } else {
-    setTitle("Settings");
-    setSubtitle("")
-  }
+      setTitle("Hi, Paulo André");
+      setSubtitle("Let's finish your task today!");
+    } else if (location.pathname == "/task") {
+      setTitle("Explore Task");
+      setSubtitle("");
+    } else if (location.pathname == "/mentors") {
+      setTitle("Explore Mentors");
+      setSubtitle("");
+    } else if (location.pathname == "/message") {
+      setTitle("Message");
+      setSubtitle("");
+    } else if (location.pathname == "/setting") {
+      setTitle("Settings");
+      setSubtitle("");
+    } else if (location.pathname == "/task/task-detail") {
+      setTitle("Detail Task");
+      setSubtitle("");
+    } 
   }, [location.pathname]);
 
   return (
@@ -35,7 +38,7 @@ export const Layout = () => {
         <Sidebar />
       </div>
       <div className="flex flex-col flex-1 overflow-hidden">
-      <Header title={title} subtitle={subtitle} />
+        <Header title={title} subtitle={subtitle} />
         <main className="flex-1 overflow-y-auto">
           <Outlet />
         </main>
