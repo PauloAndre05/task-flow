@@ -5,18 +5,19 @@ import { Setting } from "../pages/setting/Setting";
 import { Task } from "../pages/Task/Task";
 import { Message } from "../pages/message/Message";
 import { Mentors } from "../pages/mentors/Mentors";
-
+import { TaskDetail } from "../components/Task/Task-Detail";
 
 export const AppRoutes = () => {
-    return(
-        <Routes>
-            <Route path="/" element={ <Layout /> }>
-                <Route index element={ <Overview /> }/>
-                <Route path="/mentors" element={ <Mentors /> }/>
-                <Route path="task" element={ <Task /> }/>
-                <Route path="/message" element={ <Message /> }/>
-                <Route path="/setting" element={ <Setting /> }/>
-            </Route>
-        </Routes>
-    )
-}
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Overview />} />
+        <Route path="/mentors" element={<Mentors />} />
+        <Route path="task" element={<Task />} />
+        <Route path="/message" element={<Message />} />
+        <Route path="/setting" element={<Setting />} />
+        <Route path="/task/task-detail" element={<TaskDetail />} />
+      </Route>
+    </Routes>
+  );
+};
