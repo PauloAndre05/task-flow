@@ -104,9 +104,9 @@ export const TaskDetail = () => {
             </div>
           </div>
           <h2 className="text-2xl font-semibold">File Task</h2>
-          <div className="felx justify-between items-center my-4">
+          <div className="flex justify-between items-center my-4">
             <span className="text-[#54577A]">Last Modified</span>
-            <span>1 July 2022</span>
+            <span className="font-semibold">1 July 2022</span>
           </div>
           <span className="text-[#54577A]">File submissions</span>
           <form className="mt-2">
