@@ -11,7 +11,7 @@ import type { NavigationOptions } from "swiper/types";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { useRef } from "react";
 import { Task } from "../Task/Task";
-import { DataTask } from "../Task/DataTask";
+import { DataTimeLimite } from "../Task/DataTimeLimite";
 
 export const UpComingTask = () => {
   const prevRef = useRef(null);
@@ -30,7 +30,7 @@ export const UpComingTask = () => {
         </div>
       </div>
       <div className="max-w-full overflow-x-auto">
-        {DataTask ? (
+        {DataTimeLimite ? (
           <Swiper
             slidesPerView={2}
             spaceBetween={30}
@@ -49,7 +49,7 @@ export const UpComingTask = () => {
             }}
             modules={[Navigation]}
           >
-            {DataTask.map((task) => (
+            {DataTimeLimite.map((task) => (
               <SwiperSlide key={task.id}>
                 <Task
                   id={task.id}

@@ -9,7 +9,7 @@ import type { NavigationOptions } from "swiper/types";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { useRef, useEffect, useState } from "react";
 import { Task } from "./Task";
-import { DataTask } from "./DataTask";
+import { DataTimeLimite } from "./DataTimeLimite";
 
 type TimeLimiteProps = {
   name: string;
@@ -18,17 +18,13 @@ type TimeLimiteProps = {
 export const TimeLimite = ({ name }: TimeLimiteProps) => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-  const [swiperReady, setSwiperReady] = useState(false);
 
-  useEffect(() => {
-    setSwiperReady(true);
-  }, []);
-
-  const DataTaskFiltred = name
-    ? DataTask.filter((task) =>
+  const DataTaskFiltered = name
+    ? DataTimeLimite.filter((task) =>
         task.title.toLowerCase().includes(name.toLowerCase())
       )
-    : DataTask;
+    : DataTimeLimite;
+
 
   return (
     <div className="flex flex-col gap-4 overflow-hidden">
@@ -45,7 +41,7 @@ export const TimeLimite = ({ name }: TimeLimiteProps) => {
       </div>
 
       <div className="max-w-full overflow-x-auto">
-        {swiperReady ? (
+        {DataTaskFiltered ? (
           <Swiper
             slidesPerView={4}
             spaceBetween={30}
@@ -67,7 +63,7 @@ export const TimeLimite = ({ name }: TimeLimiteProps) => {
             }}
             modules={[Navigation]}
           >
-            {DataTaskFiltred.map((task) => (
+            {DataTaskFiltered.map((task) => (
               <SwiperSlide key={task.id}>
                 <Task
                   id={task.id}

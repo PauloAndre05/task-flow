@@ -47,7 +47,7 @@ export const TaskToday = () => {
           </div>
         ))}
       </div>
-      <button className="w-full h-11 bg-[#546FFF] text-white mt-auto rounded-xl cursor-pointer transition-colors hover: hover:bg-blue-50 hover:text-gray-700  ">
+      <button className="w-full h-11 bg-[#546FFF] text-white mt-auto rounded-xl cursor-pointer transition-colors hover: hover:bg-blue-50 hover:text-gray-700">
         Go To Detail
       </button>
     </div>
