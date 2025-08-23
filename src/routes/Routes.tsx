@@ -16,7 +16,7 @@ export const AppRoutes = () => {
         <Route path="task" element={<Task />} />
         <Route path="/message" element={<Message />} />
         <Route path="/setting" element={<Setting />} />
-        <Route path="/task/task-detail" element={<TaskDetail />} />
+        <Route path="/task/task-detail/:id" element={<TaskDetail />} />
       </Route>
     </Routes>
   );
