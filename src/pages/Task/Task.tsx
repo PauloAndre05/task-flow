@@ -36,7 +36,7 @@ export const Task = () => {
           </div>
         ) : (
           <h1 className="text-2xl font-semibold">
-            Nenhum resultado encontrado
+            Nenhuma task encontrado!
           </h1>
         )}
       </div>

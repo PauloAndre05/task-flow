@@ -26,14 +26,16 @@ export const Mentors = () => {
       <div className="sticky top-0 bg-white z-10 pb-6 px-8">
         <SubHeader onSearch={(value) => setName(value)} />
       </div>
-      {hasResult ? (
-        <div className="flex flex-col gap-4 pl-6 pt-6 pb-6">
-          {hasResultRecentMentors && <RecentMentors name={name} />}
-          {hasResultMentorList && <MentorsList name={name} />}
-        </div>
-      ) : (
-        <h1 className="text-2xl font-semibold">Nenhum resultado encontrado</h1>
-      )}
+      <div className="flex flex-col gap-4 pl-6 pb-6">
+        {hasResult ? (
+          <div className="flex flex-col gap-4 pl-6 pt-6 pb-6">
+            {hasResultRecentMentors && <RecentMentors name={name} />}
+            {hasResultMentorList && <MentorsList name={name} />}
+          </div>
+        ) : (
+          <h1 className="text-2xl font-semibold">Nenhum mentor encontrado!</h1>
+        )}
+      </div>
     </div>
   );
 };

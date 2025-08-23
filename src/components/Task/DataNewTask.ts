@@ -1,63 +1,63 @@
-import { ImageTaskToday } from "../../assets/overview";
+import * as image from "../../assets/task/index"
 
 export const DataNewTask = [ 
      {
   id: 1,
-  image: ImageTaskToday,
+  image: image.taskImage1,
   title: "Creating Awesome Mobile Apps",
   Sector: "UI /UX Designer",  
 },
      {
   id: 2,
-  image: ImageTaskToday,
+  image: image.taskImage2,
   title: "Creating Awesome Mobile Apps",
   Sector: "UI /UX Designer",  
 },
      {
   id: 3,
-  image: ImageTaskToday,
+  image: image.taskImage3,
   title: "Creating Awesome Mobile Apps",
   Sector: "UI /UX Designer",  
 },
      {
   id: 4,
-  image: ImageTaskToday,
+  image: image.taskImage4,
   title: "Creating Awesome Mobile Apps",
   Sector: "UI /UX Designer",  
 },
      {
   id: 5,
-  image: ImageTaskToday,
+  image: image.taskImage5,
   title: "Creating Awesome Mobile Apps",
   Sector: "UI /UX Designer",  
 },
      {
   id: 6,
-  image: ImageTaskToday,
+  image: image.taskImage6,
   title: "Creating Awesome Mobile Apps",
   Sector: "UI /UX Designer",  
 },
      {
   id: 7,
-  image: ImageTaskToday,
+  image: image.taskImage7,
   title: "Creating Awesome Mobile Apps",
   Sector: "UI /UX Designer",  
 },
      {
   id: 8,
-  image: ImageTaskToday,
+  image: image.taskImage8,
   title: "Creating Awesome Mobile Apps",
   Sector: "UI /UX Designer",  
 },
      {
   id: 9,
-  image: ImageTaskToday,
+  image: image.taskImage1,
   title: "Creating Awesome Mobile Apps",
   Sector: "UI /UX Designer",  
 },
      {
   id: 10,
-  image: ImageTaskToday,
+  image: image.taskImage5,
   title: "Samuel",
   Sector: "UI /UX Designer",  
 },
