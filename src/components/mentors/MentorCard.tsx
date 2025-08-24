@@ -21,7 +21,7 @@ export const MentorsCard = ({
   };
 
   return (
-    <div className="w-full bg-white p-6 rounded-xl flex flex-col gap-6">
+    <div className="w-full bg-white p-6 rounded-xl flex flex-col gap-6 cursor-pointer">
       <div className="flex justify-between items-center">
         <div className="flex gap-4 items-center">
           <div className="w-16 aspect-square rounded-full overflow-hidden flex-shrink-0">
