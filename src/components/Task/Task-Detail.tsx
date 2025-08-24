@@ -1,41 +1,47 @@
 import { SubHeader } from "../subHeader/subHeader";
-import { ImageTaskToday } from "../../assets/overview";
 import { BsClock } from "react-icons/bs";
 import { PiUsers } from "react-icons/pi";
 import { IoCheckmarkCircleSharp } from "react-icons/io5";
 import { useParams } from "react-router-dom";
 import { DataNewTask } from "./DataNewTask";
+import { useState } from "react";
+import { DataTimeLimite } from "./DataTimeLimite";
 
 const DataDetailTask = [
   { id: 1, description: "Understanding the tools in Figma" },
   { id: 2, description: "Understand the basics of making designs" },
   { id: 3, description: "Design a mobile application with figma" },
 ];
+
 export const TaskDetail = () => {
+  const [valueSearch, setValueSearch] = useState<string>("")
   const { id } = useParams<{ id: string }>();
-  const task = id ? DataNewTask.find((task) => task.id === parseInt(id)) : null;
-  console.log(task);
+  const newTask = id ? DataNewTask.find((task) => task.id === parseInt(id)) : null;
+  const timiLimite = id ? DataTimeLimite.find((task) => task.id === parseInt(id)) : null;
+  const task = newTask || timiLimite
+  const filteredTask = valueSearch ? 
+   DataNewTask.find((task) => task.title.toLowerCase() === valueSearch.toLowerCase())
+  : task
+  
 
   return (
     <>
-      {task && (
+      {filteredTask && (
         <div>
           <div className="sticky top-0 bg-white z-10 pb-6 px-8">
-            <SubHeader />
+            <SubHeader onClick={((value) => setValueSearch(value))}/>
           </div>
           <div className="flex p-8 gap-8">
             <div className=" flex-1 bg-white">
               <div className="w-full">
                 <img
-                  src={task.image}
+                  src={filteredTask.image}
                   alt="Image-Task"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6 flex flex-col gap-4">
-                <h1 className="text-2xl font-semibold">
-                  {task.title}
-                </h1>
+                <h1 className="text-2xl font-semibold">{filteredTask.title}</h1>
                 <div className="flex flex-col gap-4">
                   <div className="flex gap-2 items-center text-sm">
                     <span className="text-[#54577A]">

@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useParams } from "react-router-dom";
 import { Sidebar } from "../components/sidebar/Sidebar";
 import { Header } from "../components/header/Header";
 import { TaskToday } from "../components/overview/TaskToday";
@@ -9,6 +9,8 @@ export const Layout = () => {
   const location = useLocation();
   const [title, setTitle] = useState<string>();
   const [subtitle, setSubtitle] = useState<string>();
+
+  const {id} = useParams<{id: string}>()
 
   useEffect(() => {
     if (location.pathname == "/") {
@@ -26,7 +28,7 @@ export const Layout = () => {
     } else if (location.pathname == "/setting") {
       setTitle("Settings");
       setSubtitle("");
-    } else if (location.pathname == "/task/task-detail") {
+    } else if (location.pathname == `/task/task-detail/${id}`) {
       setTitle("Detail Task");
       setSubtitle("");
     } 

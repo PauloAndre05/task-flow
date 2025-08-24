@@ -44,7 +44,7 @@ export const RecentMentors = ({name}: RecenteMentorsProps) => {
       <div className="max-w-full overflow-x-auto">
         {filteredTecenteMentors ? (
           <Swiper
-            slidesPerView={4}
+            slidesPerView={3}
             spaceBetween={30}
             pagination={{ clickable: true }}
             className="mySwiper"
