@@ -53,7 +53,7 @@ export const SubHeader = ({ onSearch, onClick }: SubHeaderProps) => {
           <input
             type="text"
             placeholder={placeholder}
-            className=" border-hidden outline-hidden w-full"
+            className=" border-hidden outline-none w-full"
             {...register("name")}
           />
           <CiSearch
