@@ -24,7 +24,7 @@ export const Task = () => {
   const hasResult = hasResulNewTask || hasResulDataLimite;
 
   return (
-    <div>
+    <div className="relative">
       <div className="sticky top-0 bg-white z-10 pb-6 px-8">
         <SubHeader onSearch={(value) => setName(value)} />
       </div>
