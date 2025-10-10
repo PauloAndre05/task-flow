@@ -10,13 +10,13 @@ export const DataNewTask = [
      {
   id: 2,
   image: image.taskImage2,
-  title: "Creating Awesome Mobile Apps",
+  title: "Front-End",
   Sector: "UI /UX Designer",  
 },
      {
   id: 3,
   image: image.taskImage3,
-  title: "Creating Awesome Mobile Apps",
+  title: "Back-End",
   Sector: "UI /UX Designer",  
 },
      {
