@@ -20,7 +20,6 @@ export const CreateTaskModal = ({
         </h1>
         <div className="w-96">
           <form className="flex flex-col gap-6">
-            <input type="text" placeholder="Task's title" className="outline-none border-b-2 border-[#546FFF]/30"/>
             <select name="" id="" aria-placeholder="Select the" className="outline-none border-b-2 border-[#546FFF]/30">
               <option value="">Select category</option>
               <option value="">UI/UX Design</option>
