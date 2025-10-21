@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { Notification } from "../../assets/header";
 import { ImageProfile } from "../../assets/header";
-import { SubHeader } from "../subHeader/subHeader";
 
 interface HeaderProps {
   title?: string;
