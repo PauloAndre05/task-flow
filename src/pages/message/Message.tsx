@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { UsersList } from "../../components/message/usersList";
 import { Chat } from "../../components/message/Chat";
+import { UsersList } from "../../components/message/UsersList";
 
 export const Message = () => {
   useEffect(() => {
