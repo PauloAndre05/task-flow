@@ -1,5 +1,8 @@
-export const Chat = () => {
+interface ChatProps {
+    id: number
+}
+export const Chat = ( {id}: ChatProps ) => {
     return(
-        <div className="flex-1">Chat</div>
+        <div className="flex-1">{id}</div>
     )
 }

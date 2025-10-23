@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 import { useForm } from "react-hook-form";
 import { CreateTaskModal } from "../Task/createTaskModal";
-import Modal from "@mui/material/Modal";
 
 type InputType = {
   name?: string;
