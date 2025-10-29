@@ -35,9 +35,7 @@ export const Task = () => {
             {hasResulNewTask && <NewTask name={name} />}
           </div>
         ) : (
-          <h1 className="text-2xl font-semibold">
-            Nenhuma task encontrado!
-          </h1>
+          <h1 className="text-2xl font-semibold">Nenhuma task encontrado!</h1>
         )}
       </div>
     </div>

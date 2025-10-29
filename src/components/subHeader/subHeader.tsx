@@ -1,50 +1,49 @@
-import { CiSearch } from "react-icons/ci";
-import { Category, SortBy } from "../../assets/subHeader/index";
-import { useLocation, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { CiSearch } from "react-icons/ci"
+import { Category, SortBy } from "../../assets/subHeader/index"
+import { useLocation, useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
 
-import { useForm } from "react-hook-form";
-import { CreateTaskModal } from "../Task/createTaskModal";
-import Modal from "@mui/material/Modal";
+import { useForm } from "react-hook-form"
+import { CreateTaskModal } from "../Task/createTaskModal"
 
 type InputType = {
-  name?: string;
-};
+  name?: string
+}
 
 type SubHeaderProps = {
-  onSearch?: (value: string) => void;
-  onClick?: (value: string) => void;
-};
+  onSearch?: (value: string) => void
+  onClick?: (value: string) => void
+}
 
 export const SubHeader = ({ onSearch, onClick }: SubHeaderProps) => {
-  const [placeholder, setPlaceholder] = useState<string>();
-  const location = useLocation();
-  const currentPath = location.pathname === "/task";
-  const [isOpenCreateTaskModal, setIsOpenCreateTaskModal] = useState(false);
+  const [placeholder, setPlaceholder] = useState<string>()
+  const location = useLocation()
+  const currentPath = location.pathname === "/task"
+  const [isOpenCreateTaskModal, setIsOpenCreateTaskModal] = useState(false)
 
   const openModal = () => {
-    setIsOpenCreateTaskModal(!isOpenCreateTaskModal);
-  };
+    setIsOpenCreateTaskModal(!isOpenCreateTaskModal)
+  }
 
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams<{ id: string }>()
 
   useEffect(() => {
     if (location.pathname === "/task") {
-      setPlaceholder("Search Task");
+      setPlaceholder("Search Task")
     } else if (location.pathname === "/mentors") {
-      setPlaceholder("Search Mentors");
+      setPlaceholder("Search Mentors")
     } else if (location.pathname === `/task/task-detail/${id}`) {
-      setPlaceholder("Search task to show detail");
-    } else setPlaceholder("");
-  }, [location.pathname]);
+      setPlaceholder("Search task to show detail")
+    } else setPlaceholder("")
+  }, [location.pathname])
 
-  const { register, handleSubmit } = useForm<InputType>();
+  const { register, handleSubmit } = useForm<InputType>()
   const handleSearch = (data: InputType) => {
-    if (onSearch) onSearch(data.name ?? "");
-  };
+    if (onSearch) onSearch(data.name ?? "")
+  }
   const handleSearchClick = (data: InputType) => {
-    if (onClick) onClick(data.name ?? "");
-  };
+    if (onClick) onClick(data.name ?? "")
+  }
 
   return (
     <div className="flex justify-between items-center bg-white relative">
@@ -53,7 +52,7 @@ export const SubHeader = ({ onSearch, onClick }: SubHeaderProps) => {
           <input
             type="text"
             placeholder={placeholder}
-            className=" border-hidden outline-hidden w-full"
+            className=" border-hidden outline-none w-full"
             {...register("name")}
           />
           <CiSearch
@@ -87,5 +86,5 @@ export const SubHeader = ({ onSearch, onClick }: SubHeaderProps) => {
         <CreateTaskModal setIsOpenCreateTaskModal={setIsOpenCreateTaskModal} />
       )}
     </div>
-  );
-};
+  )
+}
