@@ -3,17 +3,27 @@ import { BsSearch } from "react-icons/bs";
 import { DataMentors } from "../mentors/DataMentors";
 import { useState } from "react";
 
-type InputType = {
-  name?: string;
-};
+interface UserListProps {
+  onselectUser: (id: number) => void;
+}
 
-export const UsersList = () => {
+export const UsersList = ({ onselectUser }: UserListProps) => {
   const [selectedUser, setSelectedUser] = useState<number>();
+  const [name, setName] = useState<string>("");
+
 
   const handleSelectUser = (id: number) => {
-    setSelectedUser(id);
+    if (id !== selectedUser) {
+      setSelectedUser(id);
+      onselectUser(id);
+    }
   };
 
+  const filteredUsers = name
+    ? DataMentors.filter((user) =>
+        user.name.toLowerCase().includes(name.toLowerCase())
+      )
+    : DataMentors;
 
   const getUserInitials = (name: string) => {
     const world = name.trim().split(/\s+/);
@@ -23,23 +33,24 @@ export const UsersList = () => {
     return `${firstInitial}${lastInitial}`;
   };
   return (
-    <div className="w-[25%] bg-white overflow-y-auto max-h-[90vh]">
+    <div className="w-[30%] bg-white overflow-y-auto h-[90vh] hidden-scrollbar border-r border-[#F5F5F7]">
       <div className="sticky top-0 bg-white z-50 p-6 pb-0">
         <div className="flex items-center border border-[#F5F5F7] w-full rounded-md p-3 gap-2">
           <input
             type="text"
-            placeholder="Search Name"
+            placeholder="Search Name" 
             className="flex-1 outline-hidden"
+            onChange={(e) => setName(e.target.value)}
           />
           <BsSearch className="cursor-pointer" />
         </div>
       </div>
       <div className="flex flex-col gap-4 p-6 ">
-        {DataMentors ? (
-          DataMentors.map((user) => (
+        {filteredUsers.length > 0 ? (
+          filteredUsers.map((user) => (
             <div
               className={`w-full py-2 px-3 flex items-center gap-3 cursor-pointer hover:bg-[#FAFAFA] rounded-md ${
-                selectedUser === user.id ? "bg-[#FAFAFA]" : ""
+                selectedUser === user.id ? "bg-[#FAFAFA] transition-colors duration-150" : ""
               } `}
               onClick={() => handleSelectUser(user.id)}
               key={user.id}
@@ -48,12 +59,12 @@ export const UsersList = () => {
                 {user.imageProfile ? (
                   <img
                     src={user.imageProfile}
-                    alt="user Profile"
+                    alt={`Foto de perfil de ${user.name}`}
                     className="w-full h-full object-cover"
                   />
                 ) : (
                   <div className="w-full h-full bg-[#141522] rounded-full flex items-center justify-center ">
-                    <span className="font-semibold text-2xl text-white">
+                    <span className="font-semibold text-xl text-white">
                       {getUserInitials(user.name)}
                     </span>
                   </div>
@@ -74,7 +85,7 @@ export const UsersList = () => {
             </div>
           ))
         ) : (
-          <p>Usuário não encontrado!</p>
+          <h1>Nenhum usuário encontrado!</h1>
         )}
       </div>
     </div>

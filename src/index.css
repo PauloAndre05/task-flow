@@ -13,3 +13,8 @@ html {
 .swiper-slide {
   width: 100%;
 }
+
+.hidden-scrollbar {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
