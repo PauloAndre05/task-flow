@@ -10,7 +10,7 @@ export const Message = () => {
   const [user, setUser] = useState<number | undefined>(undefined);
 
   return(
-    <div className="flex border-t-[1px] border-gray-100">
+    <div className="flex border-[1px] border-gray-100 ">
       <UsersList onselectUser={setUser}/>
       <Chat user={user}/>
     </div>

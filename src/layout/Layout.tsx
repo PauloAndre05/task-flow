@@ -41,7 +41,7 @@ export const Layout = () => {
       </div>
       <div className="flex flex-col flex-1 overflow-hidden">
         <Header title={title} subtitle={subtitle} />
-        <main className="flex-1 overflow-y-auto">
+        <main className="flex-1 overflow-y-auto hidden-scrollbar">
           <Outlet />
         </main>
       </div>
